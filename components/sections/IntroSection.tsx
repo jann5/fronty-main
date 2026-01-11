@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 export function IntroSection() {
     return (
-        <section className="py-24 md:py-32 bg-primary-white">
-            <div className="container-premium">
-                <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <section className="py-16 md:py-24 lg:py-32 bg-primary-white">
+            <div className="container-premium px-4 md:px-0">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
 
                     {/* Left: Text Content */}
                     <motion.div
@@ -16,16 +16,16 @@ export function IntroSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="space-y-8 order-2 md:order-1"
+                        className="space-y-6 md:space-y-8 order-2 md:order-1"
                     >
-                        <span className="text-subtitle block">FILOZOFIA MARKI</span>
+                        <span className="text-subtitle block text-xs md:text-sm">FILOZOFIA MARKI</span>
 
-                        <h2 className="text-3xl md:text-5xl font-serif text-primary-black leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-5xl font-serif text-primary-black leading-tight">
                             Design inspirowany<br />
                             <span className="italic text-gray-dark">naturą materiału.</span>
                         </h2>
 
-                        <div className="space-y-6 text-body-elegant text-gray-dark">
+                        <div className="space-y-4 md:space-y-6 text-body-elegant text-gray-dark text-sm md:text-base">
                             <p>
                                 W Nawrot Studio wierzymy, że każdy kawałek drewna opowiada własną historię.
                                 Naszym zadaniem nie jest narzucanie formy, lecz jej wydobywanie.
@@ -37,8 +37,8 @@ export function IntroSection() {
                             </p>
                         </div>
 
-                        <div className="pt-4">
-                            <span className="inline-block border-b border-primary-black pb-1 text-sm tracking-widest uppercase cursor-pointer hover:opacity-60 transition-opacity">
+                        <div className="pt-2 md:pt-4">
+                            <span className="inline-block border-b border-primary-black pb-1 text-xs tracking-widest uppercase cursor-pointer hover:opacity-60 transition-opacity">
                                 Poznaj naszą historię
                             </span>
                         </div>
@@ -46,7 +46,7 @@ export function IntroSection() {
 
                     {/* Right: Image Composition */}
                     <motion.div
-                        className="relative order-1 md:order-2 h-[500px] w-full"
+                        className="relative order-1 md:order-2 h-[300px] md:h-[400px] lg:h-[500px] w-full"
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}

@@ -18,13 +18,13 @@ function ModelCard({ model, index }: { model: ProductModel; index: number }) {
     return (
         <motion.div
             ref={ref}
-            className="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[40vw] px-4 md:px-8 select-none" // Adjusted width for better flow
+            className="snap-center shrink-0 w-[90vw] sm:w-[75vw] md:w-[60vw] lg:w-[40vw] px-2 sm:px-4 md:px-8 select-none"
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            onDragStart={(e) => e.preventDefault()} // Prevent image dragging
+            onDragStart={(e) => e.preventDefault()}
         >
-            <div className="flex flex-col gap-6 cursor-grab active:cursor-grabbing group">
+            <div className="flex flex-col gap-4 md:gap-6 cursor-grab active:cursor-grabbing group">
                 {/* Image */}
                 <motion.div
                     className="relative aspect-[4/3] overflow-hidden bg-gray-light rounded-sm"
@@ -35,9 +35,9 @@ function ModelCard({ model, index }: { model: ProductModel; index: number }) {
                         src={model.image}
                         alt={model.name}
                         fill
-                        className="object-cover pointer-events-none" // Disable native drag
+                        className="object-cover pointer-events-none"
                         draggable={false}
-                        sizes="(max-width: 768px) 85vw, 40vw"
+                        sizes="(max-width: 640px) 90vw, (max-width: 768px) 75vw, 40vw"
                     />
 
                     {/* Hover Overlay */}
@@ -45,17 +45,17 @@ function ModelCard({ model, index }: { model: ProductModel; index: number }) {
                 </motion.div>
 
                 {/* Info */}
-                <div className="space-y-4 text-center">
-                    <h3 className="text-3xl font-serif text-primary-black group-hover:text-gray-600 transition-colors">
+                <div className="space-y-3 md:space-y-4 text-center">
+                    <h3 className="text-xl md:text-3xl font-serif text-primary-black group-hover:text-gray-600 transition-colors">
                         {model.name}
                     </h3>
                     <div className="h-px w-12 bg-gray-medium mx-auto" />
-                    <p className="text-gray-dark text-sm max-w-sm mx-auto line-clamp-2">
+                    <p className="text-gray-dark text-xs md:text-sm max-w-sm mx-auto line-clamp-2">
                         {model.description}
                     </p>
-                    <div className="pt-2">
+                    <div className="pt-1 md:pt-2">
                         <Link href={`/konfigurator?model=${model.id}`} className="inline-block" draggable={false}>
-                            <Button variant="underline" className="pointer-events-auto"> {/* Button needs robust clicks */}
+                            <Button variant="underline" className="pointer-events-auto text-xs md:text-sm">
                                 Konfiguruj {model.name}
                             </Button>
                         </Link>
@@ -97,10 +97,10 @@ export function ModelsCarousel() {
     };
 
     return (
-        <section className="py-32 w-full overflow-hidden bg-white" id="shop">
-            <div className="container-premium mb-20 text-center">
-                <span className="text-subtitle block mb-4">KOLEKCJA 2026</span>
-                <h2 className="text-display-md font-serif text-primary-black">Pięć esencji formy.</h2>
+        <section className="py-16 md:py-24 lg:py-32 w-full overflow-hidden bg-white px-4 md:px-0" id="shop">
+            <div className="container-premium mb-12 md:mb-20 text-center">
+                <span className="text-subtitle block mb-4 text-xs md:text-sm">KOLEKCJA 2026</span>
+                <h2 className="text-display-md font-serif text-primary-black text-2xl md:text-3xl lg:text-4xl">Pięć esencji formy.</h2>
             </div>
 
             {/* Draggable Carousel Container */}
@@ -112,7 +112,7 @@ export function ModelsCarousel() {
                 onMouseUp={handleMouseUp}
                 onMouseMove={handleMouseMove}
             >
-                <div className="flex gap-4 md:gap-8 min-w-max pb-12 pr-12">
+                <div className="flex gap-3 md:gap-4 lg:gap-8 min-w-max pb-8 md:pb-12 pr-6 md:pr-12">
                     {MODELS.map((model, index) => (
                         <ModelCard key={model.id} model={model} index={index} />
                     ))}
@@ -122,9 +122,9 @@ export function ModelsCarousel() {
             </div>
 
             {/* Scroll Hint */}
-            <div className="text-center mt-4 text-xs text-gray-dark uppercase tracking-widest opacity-60">
+            <div className="text-center mt-3 md:mt-4 text-xs text-gray-dark uppercase tracking-widest opacity-60">
                 <span className="hidden md:inline">Przeciągnij, aby odkryć</span>
-                <span className="md:hidden">Przesuń palcem</span>
+                <span className="md:hidden text-xs">Przesuń palcem</span>
             </div>
 
             <style jsx>{`

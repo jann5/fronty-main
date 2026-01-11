@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export function HeroVideoSection() {
     return (
-        <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-primary-black text-primary-white">
+        <section className="relative w-full h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-primary-black text-primary-white">
             {/* Video Background with stronger overlay for elegance */}
             <div className="absolute inset-0 w-full h-full">
                 <video
@@ -30,7 +30,7 @@ export function HeroVideoSection() {
             </div>
 
             {/* Editorial Content Layout */}
-            <div className="relative z-10 container-premium flex flex-col items-center text-center space-y-8 mt-20">
+            <div className="relative z-10 container-premium flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 md:mt-20">
 
                 {/* Subtitle / Eyebrow */}
                 <motion.span
@@ -44,7 +44,7 @@ export function HeroVideoSection() {
 
                 {/* Main Title - Serif & Elegant */}
                 <motion.h1
-                    className="text-display-lg font-serif italic md:not-italic max-w-4xl leading-tight"
+                    className="text-2xl md:text-display-lg font-serif italic md:not-italic leading-tight"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
@@ -55,7 +55,7 @@ export function HeroVideoSection() {
 
                 {/* Description */}
                 <motion.p
-                    className="text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed"
+                    className="text-sm md:text-lg lg:text-xl font-light text-white/90 leading-relaxed px-2"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
@@ -66,21 +66,21 @@ export function HeroVideoSection() {
 
                 {/* CTA Buttons */}
                 <motion.div
-                    className="flex flex-col md:flex-row gap-6 mt-8"
+                    className="flex flex-col md:flex-row gap-4 md:gap-6 mt-6 md:mt-8 w-full md:w-auto px-2 md:px-0"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                    <Link href="/konfigurator">
-                        <Button variant="white" size="lg" className="min-w-[200px]">
+                    <Link href="/konfigurator" className="w-full md:w-auto">
+                        <Button variant="white" size="lg" className="w-full md:w-auto md:min-w-[200px]">
                             Konfigurator
                         </Button>
                     </Link>
-                    <Link href="/shop">
+                    <Link href="/shop" className="w-full md:w-auto">
                         <Button
                             variant="ghost"
                             size="lg"
-                            className="border border-white text-white hover:bg-white hover:text-black min-w-[200px] transition-colors duration-300"
+                            className="border border-white text-white hover:bg-white hover:text-black w-full md:w-auto md:min-w-[200px] transition-colors duration-300"
                         >
                             Zobacz Modele
                         </Button>
