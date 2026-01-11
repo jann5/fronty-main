@@ -67,18 +67,18 @@ export function ConfigurationPanel() {
 
     return (
         <>
-        <div className="p-4 md:p-6 lg:p-10 space-y-6 md:space-y-8 pb-40 md:pb-12">
+        <div className="p-4 md:p-6 lg:p-10 space-y-4 md:space-y-6 pb-32 md:pb-12">
             {/* Header */}
-            <div className="space-y-2">
-                <h2 className="text-lg md:text-2xl font-light tracking-wide">Konfigurator</h2>
-                <p className="text-xs md:text-sm text-gray-dark uppercase tracking-widest">
+            <div className="space-y-1 md:space-y-2">
+                <h2 className="text-lg md:text-xl font-light tracking-wide">Konfigurator</h2>
+                <p className="text-xs text-gray-dark uppercase tracking-widest font-medium">
                     Krok {currentStep} / 5
                 </p>
             </div>
 
             {/* Step 1: Model Selection */}
             <div className={currentStep === 1 ? 'block' : 'hidden'}>
-                <h3 className="text-base md:text-lg font-medium mb-4">Wybierz Model</h3>
+                <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">Wybierz Model</h3>
                 <div className="space-y-3 md:space-y-4">
                     {MODELS.map((model) => (
                         <div
@@ -103,7 +103,7 @@ export function ConfigurationPanel() {
 
             {/* Step 2: Wood Selection */}
             <div className={currentStep === 2 ? 'block' : 'hidden'}>
-                <h3 className="text-base md:text-lg font-medium mb-4">Wybierz Materiał</h3>
+                <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">Wybierz Materiał</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
                     {WOODS.map((wood) => (
                         <div
@@ -126,7 +126,7 @@ export function ConfigurationPanel() {
 
             {/* Step 3: Dimensions */}
             <div className={currentStep === 3 ? 'block' : 'hidden'}>
-                <h3 className="text-base md:text-lg font-medium mb-4">Wymiary (mm)</h3>
+                <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">Wymiary (mm)</h3>
 
                 {/* IKEA Presets */}
                 <div className="mb-6">
@@ -172,7 +172,7 @@ export function ConfigurationPanel() {
 
             {/* Step 4: Handles */}
             <div className={currentStep === 4 ? 'block' : 'hidden'}>
-                <h3 className="text-base md:text-lg font-medium mb-4">Wybierz Uchwyty</h3>
+                <h3 className="text-base md:text-lg font-medium mb-3 md:mb-4">Wybierz Uchwyty</h3>
                 <div className="space-y-2 md:space-y-3">
                     {HANDLES.map((handle) => (
                         <div
@@ -194,7 +194,7 @@ export function ConfigurationPanel() {
 
             {/* Step 5: Summary */}
             <div className={currentStep === 5 ? 'block' : 'hidden'}>
-                <h3 className="text-base md:text-lg font-medium mb-6">Podsumowanie</h3>
+                <h3 className="text-base md:text-lg font-medium mb-4 md:mb-6">Podsumowanie</h3>
 
                 <div className="space-y-4 md:space-y-6 border-t border-gray-medium pt-4 md:pt-6">
                     <div className="flex justify-between text-sm md:text-base">
